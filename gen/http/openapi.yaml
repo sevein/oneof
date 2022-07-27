@@ -1,0 +1,61 @@
+swagger: "2.0"
+info:
+    title: Chatter service describing the streaming features of goa v2.
+    version: ""
+host: localhost:80
+consumes:
+    - application/json
+    - application/xml
+    - application/gob
+produces:
+    - application/json
+    - application/xml
+    - application/gob
+paths:
+    /subscribe:
+        get:
+            tags:
+                - chatter
+            summary: subscribe chatter
+            description: Subscribe to events sent when new chat messages are added.
+            operationId: chatter#subscribe
+            responses:
+                "101":
+                    description: Switching Protocols response.
+                    schema:
+                        $ref: '#/definitions/ChatterSubscribeResponseBody'
+            schemes:
+                - ws
+definitions:
+    ChatterSubscribeResponseBody:
+        title: 'Mediatype identifier: application/vnd.oneof.event; view=default'
+        type: object
+        properties:
+            payload:
+                type: object
+                properties:
+                    Type:
+                        type: string
+                        description: |-
+                            Union type name, one of:
+                            - "ping_event"
+                            - "foobar_event"
+                        example: foobar_event
+                        enum:
+                            - ping_event
+                            - foobar_event
+                    Value:
+                        type: string
+                        description: JSON formatted union value
+                        example: '"JSON"'
+                example:
+                    Type: foobar_event
+                    Value: '"JSON"'
+                required:
+                    - Type
+                    - Value
+        description: SubscribeResponseBody result type (default view)
+        example:
+            payload:
+                Type: ping_event
+                Value: '"JSON"'
