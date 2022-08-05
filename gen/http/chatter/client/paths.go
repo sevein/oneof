@@ -3,7 +3,7 @@
 // HTTP request path constructors for the chatter service.
 //
 // Command:
-// $ goa-v3.7.13 gen github.com/sevein/oneof/design -o .
+// $ goa gen github.com/sevein/oneof/design -o .
 
 package client
 

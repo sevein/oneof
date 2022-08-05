@@ -3,7 +3,7 @@
 // chatter HTTP client encoders and decoders
 //
 // Command:
-// $ goa-v3.7.13 gen github.com/sevein/oneof/design -o .
+// $ goa gen github.com/sevein/oneof/design -o .
 
 package client
 

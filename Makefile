@@ -1,4 +1,4 @@
 .DEFAULT_GOAL := goa
 
 goa:
-	@goa-v3.7.13 gen github.com/sevein/oneof/design -o .
+	go run -mod=readonly goa.design/goa/v3/cmd/goa gen github.com/sevein/oneof/design -o .

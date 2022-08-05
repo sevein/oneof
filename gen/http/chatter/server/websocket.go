@@ -3,7 +3,7 @@
 // chatter WebSocket server streaming
 //
 // Command:
-// $ goa-v3.7.13 gen github.com/sevein/oneof/design -o .
+// $ goa gen github.com/sevein/oneof/design -o .
 
 package server
 
