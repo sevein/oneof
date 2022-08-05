@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/gorilla/websocket v1.5.0
-	goa.design/goa/v3 v3.7.13
+	goa.design/goa/v3 v3.7.14
 )
 
 require (
