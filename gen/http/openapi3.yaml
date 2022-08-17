@@ -38,7 +38,7 @@ components:
                                 Union type name, one of:
                                 - "ping_event"
                                 - "foobar_event"
-                            example: ping_event
+                            example: foobar_event
                             enum:
                                 - ping_event
                                 - foobar_event
@@ -55,7 +55,7 @@ components:
             description: SubscribeResponseBody result type (default view)
             example:
                 payload:
-                    Type: ping_event
+                    Type: foobar_event
                     Value: '"JSON"'
 tags:
     - name: chatter

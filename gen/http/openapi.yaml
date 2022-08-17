@@ -40,7 +40,7 @@ definitions:
                             Union type name, one of:
                             - "ping_event"
                             - "foobar_event"
-                        example: foobar_event
+                        example: ping_event
                         enum:
                             - ping_event
                             - foobar_event
@@ -49,7 +49,7 @@ definitions:
                         description: JSON formatted union value
                         example: '"JSON"'
                 example:
-                    Type: foobar_event
+                    Type: ping_event
                     Value: '"JSON"'
                 required:
                     - Type
@@ -57,5 +57,5 @@ definitions:
         description: SubscribeResponseBody result type (default view)
         example:
             payload:
-                Type: ping_event
+                Type: foobar_event
                 Value: '"JSON"'

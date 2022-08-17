@@ -57,9 +57,24 @@ var PingEvent = ResultType("application/vnd.oneof.ping-event", func() {
 var FoobarEvent = ResultType("application/vnd.oneof.foobar-event", func() {
 	Attributes(func() {
 		Attribute("message", String)
+		Attribute("item", StoredItem, func() { View("default") })
 	})
 
 	View("default", func() {
 		Attribute("message")
+		Attribute("item")
 	})
+})
+
+var StoredItem = ResultType("application/vnd.oneof.stored-item", func() {
+	Description("StoredItem describes an item retrieved by the service.")
+	Attributes(func() {
+		Attribute("id", UInt, "Identifier of item")
+		Attribute("name")
+	})
+	View("default", func() {
+		Attribute("id")
+		Attribute("name")
+	})
+	Required("id", "name")
 })
