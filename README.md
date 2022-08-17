@@ -1,3 +1,7 @@
+## Issue 3113 (fixed)
+
+https://github.com/goadesign/goa/issues/3113
+
 Build issues in Goa-generated code when using `OneOf` in a result type used
 in `StreamingResult`:
 
@@ -16,4 +20,15 @@ gen/chatter/service.go:135:74: undefined: views.OneofPingEvent
 gen/chatter/service.go:148:97: undefined: views.OneofFoobarEvent
 gen/chatter/service.go:161:91: undefined: views.OneofPingEvent
 gen/chatter/service.go:106:25: too many errors
+```
+
+## Issue ?? (pending)
+
+Build issues in Goa-generated code when using `OneOf` in a result type used
+in `StreamingResult` - this time nesting an additional type:
+
+```
+# github.com/sevein/oneof/gen/chatter
+gen/chatter/service.go:102:17: res.Payload.Item undefined (type interface{payloadVal()} has no field or method Item)
+gen/chatter/service.go:126:18: vres.Payload.Item undefined (type interface{payloadVal()} has no field or method Item)
 ```
